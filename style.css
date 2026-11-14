@@ -1,0 +1,418 @@
+/* =========================================
+   Variables & Reset
+   ========================================= */
+:root {
+    --primary: #1f4e5f;       /* Deep Medical Slate Teal */
+    --primary-dark: #143642;
+    --accent: #79a8a9;        /* Soft Sage Teal */
+    --bg-main: #ffffff;
+    --bg-light: #f4f7f8;
+    --text-dark: #2c3539;
+    --text-muted: #5c6b73;
+    --border-color: #e0e6e9;
+    
+    --font-heading: 'Lora', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.7;
+    background-color: var(--bg-main);
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =========================================
+   Header & Navigation
+   ========================================= */
+.site-header {
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.main-nav a:hover {
+    color: var(--primary);
+}
+
+.main-nav .nav-cta {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.main-nav .nav-cta:hover {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.subtitle {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #dce5e8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-muted);
+    border: 2px dashed #b0c2c9;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    color: var(--primary);
+}
+
+.btn-light:hover {
+    background-color: var(--bg-light);
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* =========================================
+   General Sections & Typography
+   ========================================= */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.bg-teal {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.divider {
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+/* =========================================
+   Cards Grid (Specialties)
+   ========================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--bg-main);
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   Credentials Timeline
+   ========================================= */
+.credentials-list {
+    list-style: none;
+    max-width: 800px;
+}
+
+.credentials-list li {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.credentials-list li:last-child {
+    border-bottom: none;
+}
+
+.credentials-list .year {
+    min-width: 130px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.credentials-list .details strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.credentials-list .details span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   Contact & Hours
+   ========================================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.contact-info > p {
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+
+.info-block {
+    margin-bottom: 18px;
+}
+
+.info-block strong {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.hours-box {
+    background-color: var(--primary-dark);
+    padding: 32px;
+    border-radius: 10px;
+}
+
+.hours-box h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+    font-size: 1.35rem;
+}
+
+.hours-list {
+    list-style: none;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.95rem;
+}
+
+.hours-list li:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.site-footer {
+    background-color: #102a34;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 32px 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.footer-note {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* =========================================
+   Responsive Design (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 24px;
+        gap: 12px;
+    }
+
+    .main-nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-container,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .credentials-list li {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
